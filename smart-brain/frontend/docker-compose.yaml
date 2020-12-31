@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+
+  # Frontend
+  frontend:
+    container_name: frontend
+    stdin_open: true
+    tty: true
+    build: .
+    volumes:
+      - .:/usr/src/frontend
+    command: npm start
+    working_dir: /usr/src/frontend
+    ports:
+      - "3001:3001"
